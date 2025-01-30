@@ -4,11 +4,36 @@
 
 <head>
 	<link rel="stylesheet" href="styles.css">
+	<style>
+		#line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 2px;
+            background-color: black;
+            transform-origin: center center;
+        }
+	</style>
 </head>
 
 <body>
+	 <div id="line"></div>
+
+    
 	<!-- the entire body must be written by student -->
     <script type="text/javascript" src="./script.js">
+		
+        let angle = 0;
+        const line = document.getElementById('line');
+
+        function rotateLine() {
+            angle += 2;
+            line.style.transform = `rotate(${angle}deg)`;
+            setTimeout(rotateLine, 20);
+        }
+
+        rotateLine();
 </script>
 
 </body>
